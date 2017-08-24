@@ -965,6 +965,10 @@
     });
     
     isOut = timestrap.now < timestrap.min || timestrap.now > timestrap.max;
+	//edit by tr 加上自定义校验
+	if(!isOut && options.customLimit){
+		isOut = options.customLimit(elem, date, index, time);
+	}
     elem && elem[isOut ? 'addClass' : 'removeClass'](DISABLED);
     return isOut;
   };
