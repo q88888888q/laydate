@@ -1756,7 +1756,7 @@
     ,showEvent = function(elem, bind){
       elem.on(options.trigger, function(){
         bind && (that.bindElem = this);
-        that.render();
+        //that.render(); //edit by tr 修正重复渲染导至最大最小日期问题
       });
     };
     
